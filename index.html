@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tailwind  CSS</title>
+    <meta name="author" content="name">
+    <meta name="description" content="description here">
+    <meta name="keywords" content="keywords,here">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> <!--Replace with your tailwind.css once created-->
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet"> <!--Totally optional :) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.min.js" integrity="sha256-XF29CBwU1MWLaGEnsELogU6Y6rcc5nCkhhx89nFMIDQ=" crossorigin="anonymous"></script>
+
+</head>
+
+<body class="bg-blue-800 font-sans leading-normal tracking-normal mt-12">
+<!--Nav-->
+<nav class="bg-green-700 pt-2 md:pt-1 pb-1 px-1 mt-0 h-auto fixed w-full z-20 top-0">
+
+    <div class="flex flex-wrap items-center">
+        <div class="flex flex-shrink md:w-1/3 justify-center md:justify-start text-white">
+            <a href="#">
+                <span class="text-xl pl-2"><i class="em em-shallow_pan_of_food"></i></span>
+            </a>
+        </div>
+
+        <div class="flex flex-1 md:w-1/3 justify-center md:justify-start text-white px-2">
+            <span class="relative w-full">
+                <input type="search" placeholder="Search" class="w-full bg-green-800 text-sm text-white transition border border-transparent focus:outline-none focus:border-gray-700 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+                <div class="absolute search-icon" style="top: .5rem; left: .8rem;">
+                    <svg class="fill-current pointer-events-none text-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                        <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                    </svg>
+                </div>
+            </span>
+        </div>
+        
+        <div class="flex w-full pt-2 content-center justify-between md:w-1/3 md:justify-end">
+            <ul class="list-reset flex justify-between flex-1 md:flex-none items-center">
+                <li class="flex-1 md:flex-none md:mr-3">
+                    <a class="inline-block py-2 px-4 text-white no-underline" href="#">Informacion</a>
+                </li>
+                <li class="flex-1 md:flex-none md:mr-3">
+                    <a class="inline-block py-2 px-4 text-white no-underline" href="#">Ofertas</a>
+                </li>
+                <li class="flex-1 md:flex-none md:mr-3">
+                    <div class="relative inline-block">
+                        <button onclick="toggleDD('myDropdown')" class="drop-button text-white focus:outline-none"> <span class="pr-2"><i class="em em-bearded_person"></i></span> Usuario <svg class="h-3 fill-current inline" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg></button>
+                        
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</nav>
+
+<div class="flex flex-col md:flex-row">
+    <div class="bg-blue-800 shadow-lg h-16 fixed bottom-0 mt-12 md:relative md:h-screen z-10 w-full md:w-48">
+
+        <div class="md:mt-12 md:w-48 md:fixed md:left-0 md:top-0 content-center md:content-start text-left justify-between">
+            <ul class="list-reset flex flex-row md:flex-col py-0 md:py-3 px-1 md:px-2 text-center md:text-left">
+                <li class="mr-3 flex-1">
+                    <a href="#" class="block py-1 md:py-3 pl-1 align-middle text-white no-underline hover:text-white border-b-2 border-gray-800 hover:border-pink-500">
+                        <i class="fas fa-tasks pr-0 md:pr-3"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Productos</span>
+                    </a>
+                </li>
+                <li class="mr-3 flex-1">
+                    <span class="relative w-full">
+                        <input type="search" placeholder="Search" class="w-full bg-gray-800 text-sm text-white transition border border-transparent focus:outline-none focus:border-gray-700 rounded py-1 px-2 pl-10 appearance-none leading-normal">
+                        <div class="absolute search-icon" style="top: .5rem; left: .8rem;">
+                            <svg class="fill-current pointer-events-none text-white w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+                                <path d="M12.9 14.32a8 8 0 1 1 1.41-1.41l5.35 5.33-1.42 1.42-5.33-5.34zM8 14A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"></path>
+                            </svg>
+                        </div>
+                    </span>
+                </li>
+                <li class="flex-1 md:flex-none md:mr-3">
+                        <a class="inline-block py-2 px-4 text-white no-underline" href="#"> <i class="em em-page_with_curl"></i>Ofertas</a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-content flex-1 bg-grey-lightest mt-12 md:mt-2 pb-24 md:pb-5">
+        <div class="bg-white p-2 shadow text-center text-black bg-green-300 ">
+            <h3 class="pl-2">Productos</h3>
+        </div>
+        <!--Comienzo de los productos-->
+
+        <div class="flex flex-row flex-wrap flex-grow mt-2">
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-lg">
+                            <div class="bg-grey-light uppercase text-grey-darkest border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
+                                <h5 class="uppercase text-grey-dark text-center">Colada Morada </h5> 
+                            </div>
+                            <div class="p-5">
+                                    <div class="p-5">
+                                            <img src="https://www.eltelegrafo.com.ec/images/cms/quito/2016/9.jpg?1476489439429" width="300" height="300" >
+                                        </div>
+                                    <div class="p-5">
+                                            <h5 class="uppercase text-gray-dark text-left">Costo: 15$</h5>
+                                        <h5 class="uppercase text-gray-dark text-right"> ⭐⭐⭐⭐⭐</h5>
+                                    </div>
+                            </div>
+                        </div>
+    
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-lg">
+                            <div class="bg-grey-light uppercase text-grey-darkest border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
+                                <h5 class="uppercase text-grey-dark text-center">Guata</h5>
+                            </div>
+                            <div class="p-5">
+                                    <div class="p-5">
+                                            <img src="https://www.eltelegrafo.com.ec/images/cms/quito/2016/3.jpg?1476489181352" width="300" height="300" >
+                                    </div>
+                                    <div class="p-5">
+                                            <h5 class="uppercase text-gray-dark text-left">Costo: 3$</h5>
+                                        <h5 class="uppercase text-gray-dark text-right"> ⭐⭐⭐⭐⭐</h5>
+                                    </div>
+                            </div>
+                        </div>
+    
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-lg">
+                            <div class="bg-grey-light uppercase text-grey-darkest border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
+                                <h5 class="uppercase text-grey-dark text-center">Yahuarlocro</h5>
+                            </div>
+                            <div class="p-5">
+                                    <div class="p-5">
+                                            <img src="https://www.eltelegrafo.com.ec/images/cms/quito/2016/4.jpg?1476489216624" width="300" height="300" >
+                                        </div>
+                                        <div class="p-5">
+                                                <h5 class="uppercase text-gray-dark text-left">Costo: 5$</h5>
+                                            <h5 class="uppercase text-gray-dark text-right"> ⭐⭐⭐⭐⭐</h5>
+                                        </div>
+                            </div>
+                        </div>
+    
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-lg">
+                            <div class="bg-grey-light uppercase text-grey-darkest border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
+                                <h5 class="uppercase text-grey-dark text-center"> Papas con cuero</h5>
+                            </div>
+                            <div class="p-5">
+                                    <div class="p-5">
+                                            <img src="https://www.eltelegrafo.com.ec/images/cms/quito/2016/6.jpg?1476489319695" width="300" height="300" >
+                                        </div>
+                                        <div class="p-5">
+                                                <h5 class="uppercase text-gray-dark text-left">Costo: 5$</h5>
+                                            <h5 class="uppercase text-gray-dark text-right"> ⭐⭐⭐⭐⭐</h5>
+                                        </div>
+                            </div>
+                        </div>
+    
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-lg">
+                            <div class="bg-grey-light uppercase text-grey-darkest border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
+                                <h5 class="uppercase text-grey-dark text-center">Empanada de viento</h5>
+                            </div>
+                            <div class="p-5">
+                                    <div class="p-5">
+                                            <img src="https://www.eltelegrafo.com.ec/images/cms/quito/2016/7.jpg?1476489374231" width="300" height="300" >
+                                        </div>
+                                        <div class="p-5">
+                                                <h5 class="uppercase text-gray-dark text-left">Costo: 7</h5>
+                                            <h5 class="uppercase text-gray-dark text-right"> ⭐⭐⭐⭐⭐</h5>
+                                        </div>
+                            </div>
+                        </div>
+    
+                    <!--/Graph Card-->
+                </div>
+
+                <div class="w-full md:w-1/2 xl:w-1/3 p-3">
+                    <!--Graph Card-->
+                    <div class="bg-white border-transparent rounded-lg shadow-lg">
+                            <div class="bg-grey-light uppercase text-grey-darkest border-b-2 border-grey rounded-tl-lg rounded-tr-lg p-2">
+                                <h5 class="uppercase text-grey-dark text-center">Higos con Queso</h5>
+                            </div>
+                            <div class="p-5">
+                                    <div class="p-5">
+                                            <img src="https://www.eltelegrafo.com.ec/images/cms/quito/2016/10.jpg?1476489471205" width="300" height="300" >
+                                        </div><div class="p-5">
+                                                <h5 class="uppercase text-gray-dark text-left">Costo: 1$</h5>
+                                            <h5 class="uppercase text-gray-dark text-right"> ⭐⭐⭐⭐⭐</h5>
+                                        </div>
+                            </div>
+                        </div>
+    
+                    <!--/Graph Card-->
+                </div>
+
+
+            </div>
+
+</div>
+
+
+
+</body>
+
+</html>
